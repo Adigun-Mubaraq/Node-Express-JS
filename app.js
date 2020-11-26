@@ -7,8 +7,12 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var coolRouter = require('./routes/cool');
-
 var db = require('./db');
+// var author_model = require('./models/author');
+// var book_model = require('./models/book');
+// var book_ins_model = require('./models/bookinstance');
+// var genre_model = require('./models/genre');
+
 
 var app = express();
 

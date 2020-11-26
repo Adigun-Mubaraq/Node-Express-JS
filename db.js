@@ -1,11 +1,12 @@
 //Import the mongoose module
 var mongoose = require('mongoose');
+const { compile } = require('jade');
 
 const user = "mbq";
 const pass = "mubaraq123";
 const dbname = "animal_farm";
 
-//Set up default mongoose connection
+
 var mongoDB = `mongodb+srv://${user}:${pass}@cluster0.0mjoi.mongodb.net/${dbname}?retryWrites=true&w=majority`;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
