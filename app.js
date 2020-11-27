@@ -7,11 +7,9 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var coolRouter = require('./routes/cool');
-var db = require('./db');
-// var author_model = require('./models/author');
-// var book_model = require('./models/book');
-// var book_ins_model = require('./models/bookinstance');
-// var genre_model = require('./models/genre');
+
+//import routes for "catalog" area of site
+var catalogRouter = require('./routes/catalog'); 
 
 
 var app = express();
@@ -28,7 +26,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/users/cool', coolRouter)
+app.use('/users', coolRouter)
+
+// Add catalog routes to middleware chain.
+app.use('/catalog', catalogRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
