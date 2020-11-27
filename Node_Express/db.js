@@ -1,6 +1,5 @@
 //Import the mongoose module
 var mongoose = require('mongoose');
-const { compile } = require('jade');
 
 const user = "mbq";
 const pass = "mubaraq123";
