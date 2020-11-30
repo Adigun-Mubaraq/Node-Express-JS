@@ -25,11 +25,7 @@ AuthorSchema
     .get(function () {
         let birth_day = DateTime.fromJSDate(this.date_of_birth).toLocaleString(DateTime.DATE_MED);
         let death_day = DateTime.fromJSDate(this.date_of_death).toLocaleString(DateTime.DATE_MED);
-        if (death_day === "Invalid DateTime" || birth_day === "Invalid DateTime"){
-            return birth_day
-        }else {
-            return birth_day + " - " + death_day
-        };
+        return this.date_of_death ? birth_day + " - " +  death_day : birth_day ;
     });
 
 // Virtual for author's URL
